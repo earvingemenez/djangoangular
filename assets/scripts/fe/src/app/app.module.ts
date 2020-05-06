@@ -6,6 +6,8 @@ import { UIRouterModule } from '@uirouter/angular';
 
 import { TokenService } from './commons/services/auth/interceptors/token.service';
 
+import { PublicModule } from './components/public/public.module';
+
 import { APP_STATES } from './app.states';
 import { AppComponent } from './app.component';
 
@@ -17,6 +19,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     HttpClientModule,
     UIRouterModule.forRoot(APP_STATES),
+    PublicModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenService, multi: true }
